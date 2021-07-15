@@ -1,10 +1,8 @@
 package com.example.whatsappclone.ui.home
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.whatsappclone.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,5 +54,9 @@ class CallsFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.call_menu, menu)
     }
 }

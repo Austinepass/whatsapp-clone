@@ -15,6 +15,7 @@ class ChatAdapter() : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
         val msg = binding.msgTv
         val name = binding.nameTv
         val time = binding.timeTv
+        //Need to create a ChatList data class later
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

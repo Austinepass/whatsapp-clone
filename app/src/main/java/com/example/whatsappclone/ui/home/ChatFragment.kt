@@ -22,12 +22,14 @@ class ChatFragment : Fragment() {
         binding = FragmentChatBinding.inflate(inflater)
         binding.chatRecyclerView.adapter = ChatAdapter()
         binding.chatRecyclerView.layoutManager = LinearLayoutManager(activity)
+        setHasOptionsMenu(true)
 
         return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.chat_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
 

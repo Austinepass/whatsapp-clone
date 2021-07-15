@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/chat_img"
+        android:src="@drawable/aa"
+        android:layout_width="60dp"
+        app:shapeAppearanceOverlay="@style/RoundImage"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/chat_img"
+        android:fontFamily="@font/roboto"
+        android:text="Lucas"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/status_date_tv"
+        android:text="Today, 9:07"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/chat_img"
+        android:layout_below="@id/name_tv"
+        android:layout_height="wrap_content"/>
+
+
+    <View
+        android:background="#D8D8D8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_toRightOf="@id/chat_img"
+        android:layout_below="@id/chat_img"/>
+
+
+
+
+</RelativeLayout>

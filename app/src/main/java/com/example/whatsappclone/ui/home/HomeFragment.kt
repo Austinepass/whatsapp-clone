@@ -1,10 +1,9 @@
 package com.example.whatsappclone.ui.home
 
 import android.os.Bundle
+import android.view.*
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.whatsappclone.R
 import com.example.whatsappclone.databinding.FragmentHomeBinding
@@ -29,19 +28,26 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater)
         viewPager = binding!!.pager
         viewPager.adapter = HomePagerAdapter(this)
-        return binding!!.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         val tabLayout = binding!!.tabLayout
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = homeArray[position]
-            if (position == 0) {
-                tab.setIcon(R.drawable.camera)
+            when (position) {
+                0 -> tab.setIcon(R.drawable.camera)
+                1 -> {
+                    binding!!.homeTb.inflateMenu(R.menu.chat_menu)
+                }
+                2 -> {
+                    binding!!.homeTb.inflateMenu(R.menu.status_menu)
+                }
+                3 -> {
+                    binding!!.homeTb.inflateMenu(R.menu.call_menu)
+                }
             }
         }.attach()
 
+        return binding!!.root
     }
+
 
 }
